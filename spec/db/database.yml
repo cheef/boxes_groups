@@ -1,0 +1,3 @@
+sqlite3:
+  :adapter: sqlite3
+  :dbfile: vendor/plugins/boxes_groups/spec/db/che_boxes_groups.sqlite3.db

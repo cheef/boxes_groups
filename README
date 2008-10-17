@@ -1,0 +1,27 @@
+boxes_groups
+===============
+Adds helpers methods to create checkboxes group
+
+Uses
+===============
+check_box_group_tag(name, values, hash_of_all_values, options), where
+  - name: name of checkbox tag, like "user[properties]"
+  - values: variable values in array
+  - hash_of_all_values: a hash with labels and values like {"label_1" => "value_1", "label_2" => "value_2"}
+  - options, a hash of options for helper, labels and checkboxes
+<%= check_box_group_tag "user[languages]", @user.languages, {"English" => "eng", "Russian" => "ru"}, :separator => "<br />", :checkboxes => {:class => "checkbox"} %>
+
+In form
+===============
+check_box(method, hash_of_all_values, options)
+<%= f.check_box_group :languages, {"English" => "eng", "Russian" => "ru"}, :separator => "<br />", :checkboxes => {:class => "checkbox"} %>
+
+Helpers options
+===============
+Via hash "options" you can set some special variables:
+  - :separator, allows to divine checkboxes, for example "<br />"
+  - :checkboxes, a hash of options for each checkbox tag without :id and :value 
+  - :labels, a hash of options for each label tag without :for
+
+
+Copyright (c) 2008 Ivan Garmatenko <cheef.che@gmail.com>, released under the MIT license
